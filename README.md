@@ -1,4 +1,4 @@
-# Basic Spatial RNA-Seq Analysis
+# Basic Spatial RNA-Seq Analysis using Scanpy
 
 Welcome to this repository – a hands-on, story-driven walkthrough for exploring the world of single-cell and spatial transcriptomics using Python. This repository is designed for scientists, students, and enthusiasts who want to understand not just the *how*, but also the *why* behind each step of a modern transcriptomics analysis pipeline.
 
