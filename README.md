@@ -10,7 +10,7 @@ Welcome to this repository – a hands-on, story-driven walkthrough for explorin
 
 ## Introduction
 
-Imagine you’re looking at a beautiful city from above. Each building is unique, but together they form neighborhoods, districts, and the city as a whole. In biology, our “city” is a tissue, and the “buildings” are cells. Traditional RNA-seq lets us measure the average activity of all buildings together, but what if we want to know what each building is doing? Or how neighborhoods are organized? That’s where **single-cell RNA sequencing (scRNA-seq)** and **spatial transcriptomics** come in. Specifically, the data comes from a 10x Genomics Visium spatial transcriptomics experiment performed on a section of mouse brain. This is a widely used demonstration dataset provided by 10x Genomics and featured in tutorials such as the one at [cell2location website](https://cell2location.cog.sanger.ac.uk/)
+Imagine you’re looking at a beautiful city from above. Each building is unique, but together they form neighborhoods, districts, and the city as a whole. In biology, our “city” is a tissue, and the “buildings” are cells. Traditional RNA-seq lets us measure the average activity of all buildings together, but what if we want to know what each building is doing? Or how neighborhoods are organized? That’s where **single-cell RNA sequencing (scRNA-seq)** and **spatial transcriptomics** come in. Specifically, the data comes from a 10x Genomics Visium spatial transcriptomics experiment performed on a section of mouse brain. This is a widely used demonstration dataset provided by 10x Genomics and featured in tutorials such as the one at the cell2location website
 
 With these technologies, we can:
 - **Zoom in** to see what each cell is expressing.
