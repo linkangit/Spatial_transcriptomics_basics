@@ -1,84 +1,139 @@
-# Single Cell RNA-Seq & Spatial Transcriptomics Analysis
+# Basic Spatial RNA-Seq Analysis
 
+Welcome to this repository – a hands-on, story-driven walkthrough for exploring the world of single-cell and spatial transcriptomics using Python. This repository is designed for scientists, students, and enthusiasts who want to understand not just the *how*, but also the *why* behind each step of a modern transcriptomics analysis pipeline.
 
-## Overview
+---
+## Introduction
 
-This repository provides a comprehensive, well-commented Python script for analyzing single-cell RNA sequencing (scRNA-seq) and spatial transcriptomics data using [Scanpy](https://scanpy.readthedocs.io/) and [AnnData](https://anndata.readthedocs.io/). The workflow is designed for both beginners and advanced users interested in exploring gene expression at single-cell resolution, with a focus on 10x Genomics Visium spatial data.
+Imagine you’re looking at a beautiful city from above. Each building is unique, but together they form neighborhoods, districts, and the city as a whole. In biology, our “city” is a tissue, and the “buildings” are cells. Traditional RNA-seq lets us measure the average activity of all buildings together, but what if we want to know what each building is doing? Or how neighborhoods are organized? That’s where **single-cell RNA sequencing (scRNA-seq)** and **spatial transcriptomics** come in.
 
-The script covers the entire analysis pipeline, including:
+With these technologies, we can:
+- **Zoom in** to see what each cell is expressing.
+- **Map** where each cell is located within the tissue.
+- **Discover** new cell types, states, and spatial patterns.
 
-- Data loading and inspection
-- Quality control and filtering
-- Normalization and log transformation
-- Identification of highly variable genes
-- Dimensionality reduction (PCA, UMAP)
-- Clustering (Leiden algorithm)
-- Marker gene detection and visualization
-- Spatial mapping of gene expression
+But how do we turn raw data into biological insight? That’s the journey this script will take you on.
 
-## Why Use This Script?
+---
 
-- **Educational:** Each step is clearly commented, making it easy to follow and adapt for your own data.
-- **Reproducible:** The workflow is linear and can be run as a single script or interactively in a Jupyter notebook.
-- **Flexible:** You can easily swap in your own datasets or modify parameters for different tissues or organisms.
-- **Visualization-rich:** Includes spatial and dimensionality reduction plots to help interpret results.
+## What This Script Does
 
-## Getting Started
+This Python script is a complete, well-commented pipeline for analyzing single-cell and spatial transcriptomics data, especially from the popular 10x Genomics Visium platform. It guides you through:
 
-### 1. Prerequisites
+1. **Loading and inspecting your data:** Understand what’s inside your dataset.
+2. **Quality control:** Identify and remove low-quality cells and genes.
+3. **Normalization and transformation:** Make gene expression values comparable across cells.
+4. **Finding the most interesting genes:** Focus on genes that vary the most between cells.
+5. **Dimensionality reduction:** Simplify complex data into two or three dimensions for visualization.
+6. **Clustering:** Group similar cells together to find cell types or states.
+7. **Spatial visualization:** See where different cells and genes are located in the tissue.
+8. **Marker gene discovery:** Identify genes that define each cluster or cell type.
+9. **Interpretation:** Visualize and interpret results to generate biological hypotheses.
 
-- Python 3.8 or higher
-- Scanpy
-- AnnData
-- Seaborn
-- matplotlib
-- leidenalg
-- pandas
-- numpy
+Every step is explained in plain language, with comments in the code to help you understand *why* each action is taken.
 
-You can install all dependencies using:
+---
+
+## How to Use This Repository
+
+**Step 1: Install the required Python packages**
+
+You’ll need Python 3.8 or higher, and the following packages: scanpy, anndata, seaborn, matplotlib, leidenalg, pandas, and numpy.
+
+Install them with:
 
 pip install scanpy anndata seaborn matplotlib leidenalg pandas numpy
 
-### 2. Data
+**Step 2: Download the data**
 
-- **Spatial transcriptomics data:** Download a sample dataset, such as the mouse brain Visium data from [here](https://cell2location.cog.sanger.ac.uk/tutorial/mouse_brain_visium_wo_cloupe_data.zip), and extract it into a folder named `data/`.
-- **Ribosomal gene list:** Download from [MSigDB KEGG_RIBOSOME](https://www.gsea-msigdb.org/gsea/msigdb/cards/KEGG_RIBOSOME.html) as a CSV and place it in the `data/` folder.
+- Download a sample spatial transcriptomics dataset, such as the [mouse brain Visium data](https://cell2location.cog.sanger.ac.uk/tutorial/mouse_brain_visium_wo_cloupe_data.zip), and extract it into a folder called `data/`.
+- Download a ribosomal gene list (for example, from [MSigDB KEGG_RIBOSOME](https://www.gsea-msigdb.org/gsea/msigdb/cards/KEGG_RIBOSOME.html)) as a CSV file and place it in the `data/` folder.
 
-### 3. Usage
+**Step 3: Run the script**
 
-- Place the script (for example, `scRNAseq_spatial_analysis.py`) in your project directory.
-- Adjust the `sp_data_folder` path if your data is located elsewhere.
-- Run the script:
+- Place the script (e.g., `scRNAseq_spatial_analysis.py`) in your project directory.
+- Adjust the `sp_data_folder` variable if your data is in a different location.
+- Run the script from the command line:
 
 python scRNAseq_spatial_analysis.py
 
-Or, for interactive exploration, run the code in a Jupyter notebook.
+Or, open it in a Jupyter notebook for interactive exploration.
 
-### 4. Output
+---
 
-The script will print summaries and statistics at each step.  
-It will generate multiple plots, including:
+## What You'll Learn
 
-- QC histograms and violin plots
-- Spatial gene expression overlays
-- UMAP embeddings colored by clusters and gene expression
-- Marker gene heatmaps and dotplots
+By following this script, you’ll learn:
 
-## How Can This Help You?
+- How to inspect and understand the structure of single-cell and spatial transcriptomics data.
+- Why quality control is crucial, and how to spot and remove problematic cells or genes.
+- The importance of normalization and log transformation for fair comparisons.
+- How to identify highly variable genes that drive biological differences.
+- How to use PCA and UMAP to visualize complex data in a simple way.
+- How clustering algorithms can reveal hidden cell types or states.
+- How to overlay gene expression and cluster information onto tissue images.
+- How to find marker genes that define each cluster, and how to interpret them biologically.
 
-- Learn best practices for scRNA-seq and spatial transcriptomics analysis.
-- Quickly QC and explore your own single-cell or spatial data.
-- Identify cell types and marker genes in your tissue of interest.
-- Visualize spatial gene expression and cluster structure in tissue sections.
-- Adapt and extend the script for your research or teaching needs.
+---
 
-## References
+## Data Requirements
 
-- [Scanpy: Single-Cell Analysis in Python](https://scanpy.readthedocs.io/)
-- [AnnData: Annotated Data](https://anndata.readthedocs.io/)
-- [10x Genomics Visium](https://www.10xgenomics.com/products/spatial-gene-expression)
-- [MSigDB KEGG Ribosome Gene Set](https://www.gsea-msigdb.org/gsea/msigdb/cards/KEGG_RIBOSOME.html)
+- **Spatial transcriptomics data** in 10x Genomics Visium format (or similar). The script expects the filtered feature-barcode matrix and associated images.
+- **Ribosomal gene list** as a CSV file (for example, from MSigDB).
+
+Place all required files in a directory named `data/` by default.
+
+---
+
+## Detailed Workflow
+
+Here’s the story your data will go through:
+
+1. **Arriving at the city gates:**  
+   The script loads your dataset and gives you a first look at the “city” — how many cells (buildings) and genes (features) are present.
+
+2. **City census and cleanup:**  
+   Not all buildings are in good shape. Some are empty, some are falling apart. The script checks for cells with too few or too many transcripts, high mitochondrial or ribosomal content (which can indicate stress or technical artifacts), and removes them.
+
+3. **Leveling the playing field:**  
+   Each building is different in size, but we want to compare them fairly. The script normalizes the data so each cell has the same total transcript count, then log-transforms the values to reduce the effect of outliers.
+
+4. **Finding the most interesting buildings:**  
+   Not all genes are equally informative. The script identifies the most variable genes — those that change the most across cells — to focus the analysis.
+
+5. **Mapping the neighborhoods:**  
+   Using PCA and UMAP, the script reduces the data to two dimensions, making it possible to visualize relationships between cells.
+
+6. **Discovering neighborhoods:**  
+   The Leiden algorithm groups cells into clusters (“neighborhoods”) based on their gene expression profiles.
+
+7. **Painting the city map:**  
+   The script overlays clusters and gene expression onto the tissue image, showing where different cell types or states are located.
+
+8. **Finding the city’s signature features:**  
+   For each cluster, the script identifies marker genes — the “landmarks” that define each neighborhood.
+
+9. **Interpreting the city’s organization:**  
+   By examining marker genes and their spatial patterns, you can start to understand the biological organization of your tissue.
+
+---
+
+## Outputs and Insights
+
+As you run the script, you’ll see:
+
+- **Summary statistics** about your data at each step.
+- **Plots** showing quality control metrics, gene expression distributions, and dimensionality reduction.
+- **Spatial maps** overlaying gene expression and clusters on tissue images.
+- **Lists of marker genes** for each cluster, ready for further biological interpretation.
+- **Dotplots and heatmaps** to compare marker gene expression across clusters.
+
+These outputs will help you answer questions like:
+- What cell types are present in my tissue?
+- How are they organized spatially?
+- What genes define each cell type or region?
+
+---
 
 ## License
 
@@ -87,4 +142,4 @@ This project is licensed under the MIT License.
 ---
 
 **Questions or suggestions?**  
-Feel free to open an issue or submit a pull request!
+Open an issue or submit a pull request — let’s explore the city of cells together!
