@@ -3,10 +3,10 @@
 Welcome to this repository – a hands-on, story-driven walkthrough for exploring the world of single-cell and spatial transcriptomics using Python. This repository is designed for scientists, students, and enthusiasts who want to understand not just the *how*, but also the *why* behind each step of a modern transcriptomics analysis pipeline.
 
 ## Spatial-map of mouse brain (coronal section)
-![]()
+![](results/output_0_27.png)
 
 ## Clustering of spatial data (UMAP)
-![]()
+![](results/output_0_25.png)
 
 ## Introduction
 
